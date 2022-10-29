@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ResourceBundle;
 
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
+
 import com.util.CookieFilter;
 import com.util.HTMLFilter;
 
@@ -16,6 +19,8 @@ import jakarta.servlet.http.HttpSession;
 
 public class CookieExample extends HttpServlet {
 
+    private static final Log log = LogFactory.getLog(CookieExample.class);
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doGet(req, resp);
@@ -24,6 +29,8 @@ public class CookieExample extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
+        
+        log.info("Original query string :"+ req.getAttribute("jakarta.servlet.forward.query_string"));
         ResourceBundle rb = ResourceBundle.getBundle("LocalStrings", req.getLocale());
 
         // Set cookie name
