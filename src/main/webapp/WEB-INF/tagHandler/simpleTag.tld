@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <tlib-version>1.2</tlib-version>
+    <uri>simpleTags</uri>
+    <tag>
+        <description>worse use of a custom tag</description>
+        <name>simple1</name>
+        <tag-class>com.taghandler.SimpleTagTest1</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+    <tag>
+        <description>this is another simple tag with body</description>
+        <name>simple2</name>
+        <tag-class>com.taghandler.SimpleTagTest2</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    <tag>
+        <description>This simple tag 3</description>
+        <name>simple3</name>
+        <tag-class>com.taghandler.SimpleTagTest3</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    <tag>
+        <description>this is another simple tag 4</description>
+        <name>simple4</name>
+        <tag-class>com.taghandler.SimpleTagTest4</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    <tag>
+        <description>this is another simple tag 5</description>
+        <name>simple5</name>
+        <tag-class>com.taghandler.SimpleTagTest5</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>movieList</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

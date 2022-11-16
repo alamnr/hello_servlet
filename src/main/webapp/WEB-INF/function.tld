@@ -5,10 +5,24 @@
         version="2.0">
     
     <tlib-version>1.2</tlib-version>    
+    <!-- <short-name>RandomTags</short-name> -->
     <uri>DiceFunctions</uri>
     <function>
         <name>rollIt</name>
         <function-class>com.tld.DiceRoll</function-class>
         <function-signature>int rollDice()</function-signature>
     </function>
+
+    <tag>
+        <description>random advice</description>
+        <name>advice</name>
+        <tag-class>com.tag.AdvisorTagHandler</tag-class>
+        <body-content>empty</body-content>
+
+        <attribute>
+            <name>user</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
 </taglib>
