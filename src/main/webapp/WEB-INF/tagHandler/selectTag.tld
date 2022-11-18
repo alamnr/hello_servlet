@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+        <tlib-version>1.2</tlib-version>
+        <uri>selectTag</uri>
+        <tag>
+            <description>select tag with simpleTagHandler</description>
+            <name>selectSimple</name>
+            <tag-class>com.taghandler.SimpleTagHandlerSelect</tag-class>
+            <body-content>empty</body-content>
+            <attribute>
+                <name>name</name>
+                <required>true</required>                
+            </attribute>
+            
+            <attribute>
+                <name>optionsList</name>
+                <type>java.util.List</type>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+            </attribute>
+            <dynamic-attributes>true</dynamic-attributes>
+        </tag>
+        <tag>
+            <description>select tag with classic tag handler</description>
+            <name>selectClassic</name>
+            <tag-class>com.taghandler.ClassicTagHandlerSelect</tag-class>
+            <body-content>empty</body-content>
+            <attribute>
+                <name>name</name>
+                <required>true</required>
+
+            </attribute>
+            <attribute>
+                <name>optionsList</name>
+                <type>java.util.List</type>
+                <required>true</required>
+                <rtexprvalue>true</rtexprvalue>
+            </attribute>
+            <dynamic-attributes>true</dynamic-attributes>
+        </tag>
+
+</taglib>
