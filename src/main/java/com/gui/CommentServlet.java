@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/addComment"})
+@WebServlet(urlPatterns = {"/beer/addComment"})
 public class CommentServlet extends HttpServlet {
     
     private static final Log log = LogFactory.getLog(CommentServlet.class) ;

@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/selectBeer"})
+@WebServlet(urlPatterns = {"/beer/selectBeer"})
 public class BeerServlet extends HttpServlet {
 
     @Override

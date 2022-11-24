@@ -77,14 +77,68 @@
     <exception-type>java.lang.ArithmeticException</exception-type>
     <location>/jsp/arithmeticError.jsp</location>
    </error-page>
-   <error-page>
+   <!-- <error-page>
     <error-code>404</error-code>
     <location>/jsp/notFoundError.jsp</location>
-   </error-page>
+   </error-page> -->
   <!-- <error-page>
     <exception-type>java.lang.Throwable</exception-type>    
     <location>/jsp/errorPage.jsp</location>
     
   </error-page> -->
- 
+
+  <security-role><role-name>Admin</role-name></security-role>
+  <security-role><role-name>Member</role-name></security-role>
+  <security-role><role-name>Guest</role-name></security-role>
+
+  <security-constraint>
+  
+    <web-resource-collection>
+      <web-resource-name>update</web-resource-name>
+      <url-pattern>/beer/addComment/*</url-pattern>
+      <url-pattern>/beer/selectBeer/*</url-pattern>
+      <http-method>GET</http-method>
+      <http-method>POST</http-method> 
+    </web-resource-collection>
+
+    <auth-constraint>
+      <role-name>Admin</role-name>
+      <role-name>Member</role-name>
+    </auth-constraint>
+
+    <user-data-constraint>
+      <!-- <transport-guarantee>CONFIDENTIAL</transport-guarantee> -->
+      <transport-guarantee>NONE</transport-guarantee>
+    </user-data-constraint>
+
+  </security-constraint>
+  <login-config>
+    <!-- <auth-method>BASIC</auth-method> -->
+    <!-- <auth-method>DIGEST</auth-method> -->
+    <!-- <auth-method>CLIENT-CERT</auth-method> -->
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/jsp/login/loginPage.html</form-login-page>
+      <form-error-page>/jsp/login/loginError.html</form-error-page>
+    </form-login-config>
+  </login-config>
+
+  <filter>
+    <filter-name>BeerRequest</filter-name>
+    <filter-class>com.filter.BeerRequestFilter</filter-class>
+    <init-param>
+      <param-name>LogFileName</param-name>
+      <param-value>UserLog.txt</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>BeerRequest</filter-name>
+    <url-pattern>/beer/selectBeer/*</url-pattern>
+    <!-- <servlet-name>BeerServlet</servlet-name> -->
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+    
+  </filter-mapping>
 </web-app>
